@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+<br>
+<br>
+<br>
+<br>
+<h2 th:text="${amountError}" class="container-fluid text-center"></h2>
+<div id="outerwell-search" class="well well-lg">
+<div id="innerwell-search" class="well well-lg">
+<h3 class="container-fluid text-center" >Portion</h3>
+<br>
+<form method="post" class="container" style="max-width:600px;">
+<div class="form-group">
+    <label th:for="unit">Unit</label>
+    <select name="unitType">
+        <option th:text="Ounce" th:value="ounce"></option>
+        <option th:text="Pound" th:value="pound"></option>
+        <option th:text="100Grams" th:value="100grams"></option>
+    </select>
+</div>
+<p>First parameter(required).</p>
+<hr/>
+    <div class="form-group">
+        <label th:for="nutrient">Nutrient</label>
+        <select name="nutrientType">
+            <option th:text="WaterGrams" th:value="water"></option>
+            <option th:text="Calories" th:value="calories"></option>
+            <option th:text="ProteinGrams" th:value="protein"></option>
+            <option th:text="LipidsGrams" th:value="lipids"></option>
+            <option th:text="AshGrams" th:value="ash"></option>
+            <option th:text="CarbsGrams" th:value="carbs"></option>
+            <option th:text="FiberGrams" th:value="fiber"></option>
+            <option th:text="SugarGrams" th:value="sugar"></option>
+            <option th:text="CalciumMg" th:value="calcium"></option>
+            <option th:text="IronMg" th:value="iron"></option>
+            <option th:text="MagnesiumMg" th:value="magnesium"></option>
+            <option th:text="PhosphorusMg" th:value="phosphorus"></option>
+            <option th:text="PotassiumMg" th:value="potassium"></option>
+            <option th:text="SodiumMg" th:value="sodium"></option>
+            <option th:text="ZincMg" th:value="zinc"></option>
+            <option th:text="CopperMg" th:value="copper"></option>
+            <option th:text="ManganeseMg" th:value="manganese"></option>
+            <option th:text="SeleniumMicroG" th:value="selenium"></option>
+            <option th:text="VitaminCMg" th:value="vitC"></option>
+            <option th:text="ThiaminMg" th:value="thiamin"></option>
+            <option th:text="RiboflaxinMg" th:value="riboflaxin"></option>
+            <option th:text="NiacinMg" th:value="niacin"></option>
+            <option th:text="PantoAcidMg" th:value="pantoAcid"></option>
+            <option th:text="VitaminB6Mg" th:value="vitB6"></option>
+            <option th:text="FolateMicroG" th:value="folate"></option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label th:for="conditional">Conditional</label>
+        <select name="condition">
+            <option th:text="GreaterThan" th:value="greaterThan"></option>
+            <option th:text="GreaterThanOrEqual" th:value="greaterThanEqual"></option>
+            <option th:text="LessThan" th:value="lessThan"></option>
+            <option th:text="LessThanOrEqual" th:value="lessThanEqual"></option>
+            <option th:text="EqualTo" th:value="equalTo"></option>
+        </select>
+    </div>
+    <div class="form-group">
+
+        <!--<label th:for="amountG">Amount(g):</label>-->
+        <input class="form-control" placeholder="Amount:" name="amountG" />
+    </div>
+    <p>Second parameter(optional).</p>
+    <hr/>
+    <div class="form-group">
+        <label th:for="nutrient">Nutrient</label>
+        <select name="nutrientType2">
+            <option th:text="None" th:value="none"></option>
+            <option th:text="WaterGrams" th:value="water"></option>
+            <option th:text="Calories" th:value="calories"></option>
+            <option th:text="ProteinGrams" th:value="protein"></option>
+            <option th:text="LipidsGrams" th:value="lipids"></option>
+            <option th:text="AshGrams" th:value="ash"></option>
+            <option th:text="CarbsGrams" th:value="carbs"></option>
+            <option th:text="FiberGrams" th:value="fiber"></option>
+            <option th:text="SugarGrams" th:value="sugar"></option>
+            <option th:text="CalciumMg" th:value="calcium"></option>
+            <option th:text="IronMg" th:value="iron"></option>
+            <option th:text="MagnesiumMg" th:value="magnesium"></option>
+            <option th:text="PhosphorusMg" th:value="phosphorus"></option>
+            <option th:text="PotassiumMg" th:value="potassium"></option>
+            <option th:text="SodiumMg" th:value="sodium"></option>
+            <option th:text="ZincMg" th:value="zinc"></option>
+            <option th:text="CopperMg" th:value="copper"></option>
+            <option th:text="ManganeseMg" th:value="manganese"></option>
+            <option th:text="SeleniumMicroG" th:value="selenium"></option>
+            <option th:text="VitaminCMg" th:value="vitC"></option>
+            <option th:text="ThiaminMg" th:value="thiamin"></option>
+            <option th:text="RiboflaxinMg" th:value="riboflaxin"></option>
+            <option th:text="NiacinMg" th:value="niacin"></option>
+            <option th:text="PantoAcidMg" th:value="pantoAcid"></option>
+            <option th:text="VitaminB6Mg" th:value="vitB6"></option>
+            <option th:text="FolateMicroG" th:value="folate"></option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label th:for="conditional">Conditional</label>
+        <select name="condition2">
+            <option th:text="None" th:value="none"></option>
+            <option th:text="GreaterThan" th:value="greaterThan"></option>
+            <option th:text="GreaterThanOrEqual" th:value="greaterThanEqual"></option>
+            <option th:text="LessThan" th:value="lessThan"></option>
+            <option th:text="LessThanOrEqual" th:value="lessThanEqual"></option>
+            <option th:text="EqualTo" th:value="equalTo"></option>
+        </select>
+    </div>
+    <div class="form-group">
+
+        <!--<label th:for="amountG">Amount(g):</label>-->
+        <input class="form-control" placeholder="Amount:" name="amountG2" />
+    </div>
+    <p>Third parameter(optional).</p>
+    <hr/>
+    <div class="form-group">
+        <label th:for="nutrient">Nutrient</label>
+        <select name="nutrientType3">
+            <option th:text="None" th:value="none"></option>
+            <option th:text="WaterGrams" th:value="water"></option>
+            <option th:text="Calories" th:value="calories"></option>
+            <option th:text="ProteinGrams" th:value="protein"></option>
+            <option th:text="LipidsGrams" th:value="lipids"></option>
+            <option th:text="AshGrams" th:value="ash"></option>
+            <option th:text="CarbsGrams" th:value="carbs"></option>
+            <option th:text="FiberGrams" th:value="fiber"></option>
+            <option th:text="SugarGrams" th:value="sugar"></option>
+            <option th:text="CalciumMg" th:value="calcium"></option>
+            <option th:text="IronMg" th:value="iron"></option>
+            <option th:text="MagnesiumMg" th:value="magnesium"></option>
+            <option th:text="PhosphorusMg" th:value="phosphorus"></option>
+            <option th:text="PotassiumMg" th:value="potassium"></option>
+            <option th:text="SodiumMg" th:value="sodium"></option>
+            <option th:text="ZincMg" th:value="zinc"></option>
+            <option th:text="CopperMg" th:value="copper"></option>
+            <option th:text="ManganeseMg" th:value="manganese"></option>
+            <option th:text="SeleniumMicroG" th:value="selenium"></option>
+            <option th:text="VitaminCMg" th:value="vitC"></option>
+            <option th:text="ThiaminMg" th:value="thiamin"></option>
+            <option th:text="RiboflaxinMg" th:value="riboflaxin"></option>
+            <option th:text="NiacinMg" th:value="niacin"></option>
+            <option th:text="PantoAcidMg" th:value="pantoAcid"></option>
+            <option th:text="VitaminB6Mg" th:value="vitB6"></option>
+            <option th:text="FolateMicroG" th:value="folate"></option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label th:for="conditional">Conditional</label>
+        <select name="condition3">
+            <option th:text="None" th:value="none"></option>
+            <option th:text="GreaterThan" th:value="greaterThan"></option>
+            <option th:text="GreaterThanOrEqual" th:value="greaterThanEqual"></option>
+            <option th:text="LessThan" th:value="lessThan"></option>
+            <option th:text="LessThanOrEqual" th:value="lessThanEqual"></option>
+            <option th:text="EqualTo" th:value="equalTo"></option>
+        </select>
+    </div>
+    <div class="form-group">
+
+        <!--<label th:for="amountG">Amount(g):</label>-->
+        <input class="form-control" placeholder="Amount:" name="amountG3" />
+    </div>
+
+
+
+
+
+    <input class="btn btn-default btn-lg btn-block" type="submit" value="Search" />
+</form>
+</div>
+</div>
+<span th:text="${testUnit}" class="error"></span>
+<span th:text="${testAmount}" class="error"></span>
+<span th:text="${testNutrient}" class="error"></span>
+<span th:text="${testCondition}" class="error"></span>
+<span th:text="${testAmountG}" class="error"></span>
+<br>
+<br>
+<br>
+<br>
+
+</body>
+</html>
+
+
+
+
+<!--
+<div class="form-group">
+    <label th:for="nutrient">Nutrient</label>
+    <select name="nutrientType2">
+        <option th:text="Water" th:value="water"></option>
+        <option th:text="Calories" th:value="calories"></option>
+        <option th:text="Protein" th:value="protein"></option>
+        <option th:text="Lipids" th:value="lipids"></option>
+        <option th:text="Ash" th:value="ash"></option>
+        <option th:text="Carbs" th:value="carbs"></option>
+        <option th:text="Fiber" th:value="fiber"></option>
+        <option th:text="Sugar" th:value="sugar"></option>
+        <option th:text="Calcium" th:value="calcium"></option>
+        <option th:text="Iron" th:value="iron"></option>
+        <option th:text="Magnesium" th:value="magnesium"></option>
+        <option th:text="Phosphorus" th:value="phosphorus"></option>
+        <option th:text="Potassium" th:value="potassium"></option>
+        <option th:text="Sodium" th:value="sodium"></option>
+        <option th:text="Zinc" th:value="zinc"></option>
+        <option th:text="Copper" th:value="copper"></option>
+        <option th:text="Manganese" th:value="manganese"></option>
+        <option th:text="Selenium" th:value="selenium"></option>
+        <option th:text="VitaminC" th:value="vitC"></option>
+        <option th:text="Thiamin" th:value="thiamin"></option>
+        <option th:text="Riboflaxin" th:value="riboflaxin"></option>
+        <option th:text="Niacin" th:value="niacin"></option>
+        <option th:text="PantoAcid" th:value="pantoAcid"></option>
+        <option th:text="VitaminB6" th:value="vitB6"></option>
+        <option th:text="Folate" th:value="folate"></option>
+    </select>
+</div>
+<div class="form-group">
+    <label th:for="conditional">Conditional</label>
+    <select name="condition2">
+        <option th:text="GreaterThan" th:value="greaterThan"></option>
+        <option th:text="GreaterThanOrEqual" th:value="greaterThanEqual"></option>
+        <option th:text="LessThan" th:value="lessThan"></option>
+        <option th:text="LessThanOrEqual" th:value="lessThanEqual"></option>
+        <option th:text="EqualTo" th:value="equalTo"></option>
+    </select>
+</div>
+<div class="form-group">
+
+    <label th:for="amountG">Amount(g):</label>
+    <input class="form-control" name="amountG2" />
+</div>
+<p>Second parameter(optional).</p>
+<hr/>
+<div class="form-group">
+    <label th:for="nutrient">Nutrient</label>
+    <select name="nutrientType2">
+        <option th:text="Water" th:value="water"></option>
+        <option th:text="Calories" th:value="calories"></option>
+        <option th:text="Protein" th:value="protein"></option>
+        <option th:text="Lipids" th:value="lipids"></option>
+        <option th:text="Ash" th:value="ash"></option>
+        <option th:text="Carbs" th:value="carbs"></option>
+        <option th:text="Fiber" th:value="fiber"></option>
+        <option th:text="Sugar" th:value="sugar"></option>
+        <option th:text="Calcium" th:value="calcium"></option>
+        <option th:text="Iron" th:value="iron"></option>
+        <option th:text="Magnesium" th:value="magnesium"></option>
+        <option th:text="Phosphorus" th:value="phosphorus"></option>
+        <option th:text="Potassium" th:value="potassium"></option>
+        <option th:text="Sodium" th:value="sodium"></option>
+        <option th:text="Zinc" th:value="zinc"></option>
+        <option th:text="Copper" th:value="copper"></option>
+        <option th:text="Manganese" th:value="manganese"></option>
+        <option th:text="Selenium" th:value="selenium"></option>
+        <option th:text="VitaminC" th:value="vitC"></option>
+        <option th:text="Thiamin" th:value="thiamin"></option>
+        <option th:text="Riboflaxin" th:value="riboflaxin"></option>
+        <option th:text="Niacin" th:value="niacin"></option>
+        <option th:text="PantoAcid" th:value="pantoAcid"></option>
+        <option th:text="VitaminB6" th:value="vitB6"></option>
+        <option th:text="Folate" th:value="folate"></option>
+    </select>
+</div>
+<div class="form-group">
+    <label th:for="conditional">Conditional</label>
+    <select name="conditional2">
+        <option th:text="GreaterThan" th:value="greaterThan"></option>
+        <option th:text="GreaterThanOrEqual" th:value="greaterThanEqual"></option>
+        <option th:text="LessThan" th:value="lessThan"></option>
+        <option th:text="LessThanOrEqual" th:value="lessThanEqual"></option>
+        <option th:text="EqualTo" th:value="equalTo"></option>
+    </select>
+</div>
+<div class="form-group">
+
+    <label th:for="amountG">Amount(g):</label>
+    <input class="form-control" name="amountG2" />
+</div>
+<p>Third parameter(optional).</p>
+<hr/>
+<div class="form-group">
+    <label th:for="nutrient">Nutrient</label>
+    <select name="nutrientType3">
+        <option th:text="Water" th:value="water"></option>
+        <option th:text="Calories" th:value="calories"></option>
+        <option th:text="Protein" th:value="protein"></option>
+        <option th:text="Lipids" th:value="lipids"></option>
+        <option th:text="Ash" th:value="ash"></option>
+        <option th:text="Carbs" th:value="carbs"></option>
+        <option th:text="Fiber" th:value="fiber"></option>
+        <option th:text="Sugar" th:value="sugar"></option>
+        <option th:text="Calcium" th:value="calcium"></option>
+        <option th:text="Iron" th:value="iron"></option>
+        <option th:text="Magnesium" th:value="magnesium"></option>
+        <option th:text="Phosphorus" th:value="phosphorus"></option>
+        <option th:text="Potassium" th:value="potassium"></option>
+        <option th:text="Sodium" th:value="sodium"></option>
+        <option th:text="Zinc" th:value="zinc"></option>
+        <option th:text="Copper" th:value="copper"></option>
+        <option th:text="Manganese" th:value="manganese"></option>
+        <option th:text="Selenium" th:value="selenium"></option>
+        <option th:text="VitaminC" th:value="vitC"></option>
+        <option th:text="Thiamin" th:value="thiamin"></option>
+        <option th:text="Riboflaxin" th:value="riboflaxin"></option>
+        <option th:text="Niacin" th:value="niacin"></option>
+        <option th:text="PantoAcid" th:value="pantoAcid"></option>
+        <option th:text="VitaminB6" th:value="vitB6"></option>
+        <option th:text="Folate" th:value="folate"></option>
+    </select>
+</div>
+<div class="form-group">
+    <label th:for="conditional">Conditional</label>
+    <select name="conditional3">
+        <option th:text="GreaterThan" th:value="greaterThan"></option>
+        <option th:text="GreaterThanOrEqual" th:value="greaterThanEqual"></option>
+        <option th:text="LessThan" th:value="lessThan"></option>
+        <option th:text="LessThanOrEqual" th:value="lessThanEqual"></option>
+        <option th:text="EqualTo" th:value="equalTo"></option>
+    </select>
+</div>
+<div class="form-group">
+
+    <label th:for="amountG">Amount(g):</label>
+    <input class="form-control" name="amountG3" />
+</div>
+<input type="submit" value="Search" />
+</form>
+-->

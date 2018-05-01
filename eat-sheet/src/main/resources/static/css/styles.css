@@ -1,0 +1,74 @@
+
+
+
+
+
+
+
+
+#innerwell {
+    margin: auto;
+    height: 240px;
+    width: 650px;
+    background-color: #4F6457;
+
+}
+
+#outerwell {
+    margin: auto;
+    height: 290px;
+    width: 700px;
+    background-color: #ACD0C0;
+}
+
+#outerwell-log {
+    margin: auto;
+    height: 240px;
+    width: 700px;
+    background-color: #ACD0C0;
+
+
+}
+
+#innerwell-log {
+    margin: auto;
+    height: 190px;
+    width: 650px;
+    background-color: #4F6457;
+}
+
+#outerwell-name {
+    margin: auto;
+    height: 200px;
+    width: 700px;
+    background-color: #ACD0C0;
+}
+
+#innerwell-name {
+    margin: auto;
+    height: 150px;
+    width: 650px;
+    background-color: #4F6457;
+}
+
+#outerwell-search {
+    margin: auto;
+    height: 850px;
+    width: 700px;
+    background-color: #ACD0C0;
+}
+
+#innerwell-search {
+    margin: auto;
+    height: 800px;
+    width: 650px;
+    background-color: #4F6457;
+
+}
+.well {
+    background-color: #ACD0C0;
+
+
+}
+
+

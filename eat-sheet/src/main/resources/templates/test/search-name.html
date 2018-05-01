@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+<br>
+<br>
+<br>
+<br>
+<h3 class="container-fluid text-center">Search by name.</h3>
+<br>
+<div id="outerwell-name" class="well well-lg">
+    <div id="innerwell-name" class="well well-lg">
+
+        <form method="post" class="container" style="max-width:600px;">
+            <div class="form-group">
+        <!--<label th:for="searchTerm">Search term:</label>-->
+                <input class="form-control" placeholder="Search term:" name="searchTerm" />
+                <span th:text="${nameError}" class="error"></span>
+            </div>
+        <input class="btn btn-default btn-lg btn-block" type="submit" value="Search" />
+        </form>
+    </div>
+</div>
+<span th:text="${testValue}" class="error"></span>
+</body>
+</html>

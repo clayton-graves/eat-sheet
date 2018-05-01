@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+<br>
+<br>
+<br>
+<br>
+<p th:unless="${foods} and ${foods.size()}">no food :(</p>
+
+<!--<h3 th:text="{sizeNum} + ' Result(s)'"></h3>-->
+<table class="table">
+
+    <tr>
+
+        <th>Name</th>
+        <th>Water</th>
+        <th>Calories</th>
+        <th>Protein</th>
+        <th>Lipids</th>
+        <th>Ash</th>
+        <th>Carbs</th>
+        <th>Fiber</th>
+        <th>Sugar</th>
+        <th>Calcium(mg)</th>
+        <th>Iron(mg)</th>
+        <th>Magnesium(mg)</th>
+        <th>Phosphorus(mg)</th>
+        <th>Potassium(mg)</th>
+        <th>Sodium(mg)</th>
+        <th>Zinc(mg)</th>
+        <th>Copper(mg)</th>
+        <th>Manganese(mg)</th>
+        <th>Selenium(µg)</th>
+        <th>Vitamin C(mg)</th>
+        <th>Thiamine(mg)</th>
+        <th>Riboflavin(mg)</th>
+        <th>Niacin(mg)</th>
+        <th>Panto Acid(mg)</th>
+        <th>Vitamin B6(mg)</th>
+        <th>Folate(µg)</th>
+    </tr>
+
+    <tr th:each="food : ${foods}">
+
+        <td th:text="${food.name}"></td>
+        <td th:text="${food.water}"></td>
+        <td th:text="${food.calories}"></td>
+        <td th:text="${food.protein}"></td>
+        <td th:text="${food.lipids}"></td>
+        <td th:text="${food.ash}"></td>
+        <td th:text="${food.carbs}"></td>
+        <td th:text="${food.fiber}"></td>
+        <td th:text="${food.sugar}"></td>
+        <td th:text="${food.calcium}"></td>
+        <td th:text="${food.iron}"></td>
+        <td th:text="${food.magnesium}"></td>
+        <td th:text="${food.phosphorus}"></td>
+        <td th:text="${food.potassium}"></td>
+        <td th:text="${food.sodium}"></td>
+        <td th:text="${food.zinc}"></td>
+        <td th:text="${food.copper}"></td>
+        <td th:text="${food.manganese}"></td>
+        <td th:text="${food.selenium}"></td>
+        <td th:text="${food.vitC}"></td>
+        <td th:text="${food.thiamin}"></td>
+        <td th:text="${food.riboflaxin}"></td>
+        <td th:text="${food.niacin}"></td>
+        <td th:text="${food.pantoAcid}"></td>
+        <td th:text="${food.vitB6}"></td>
+        <td th:text="${food.folate}"></td>
+    </tr>
+
+</table>
+<span th:text="${quantityNum}"></span>
+</body>
+</html>

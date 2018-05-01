@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+<br>
+<br>
+<br>
+<br>
+<h3 class="container-fluid text-center">Register to Commence the Query.</h3>
+<br>
+<div id="outerwell" class="well well-lg">
+<div id="innerwell" class="well well-lg">
+<form method="post" class="container" style="max-width:600px;" th:object="${user}">
+    <div class="form-group">
+        <!--<label th:for="name">Name</label>-->
+        <input class="form-control" placeholder="Username:" th:field="*{name}" />
+        <span th:errors="*{name}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <!--<label th:for="password">Password</label>-->
+        <input class="form-control" type="password" placeholder="Password:" th:field="*{password}" />
+        <span th:errors="*{password}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <!--<label>Verify Password</label>-->
+        <input class="form-control" type="password" placeholder="Verify Password:" name="verify" />
+        <span th:text="${verError}" class="error"></span>
+    </div>
+    <input class="btn btn-default btn-lg btn-block" type="submit" value="Register" />
+
+</form>
+</div>
+</div>
+</body>
+</html>
